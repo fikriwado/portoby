@@ -32,6 +32,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    'gatsby-plugin-postcss'
+    'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `fira code\:400,600`,
+          `saira\:400,500,600`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }
