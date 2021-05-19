@@ -22,7 +22,7 @@ const Header = () => {
 		<header className="py-6 lg:py-10">
 			<div className="container">
 				<div className="w-full lg:w-7/12 mx-auto lg:px-7">
-					<div className="flex flex-wrap items-center">
+					<div className="flex flex-wrap items-center border-b pb-7">
 						<StaticImage
 							src="../images/profile.png"
 							width={100}

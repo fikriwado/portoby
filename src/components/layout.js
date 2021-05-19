@@ -4,7 +4,7 @@ import Header from "./header"
 
 const Layout = ({ children }) => {
 	return (
-		<div className="min-h-screen bg-gray-50 text-gray-600 font-saira leading-relaxed antialiased">
+		<div className="min-h-screen bg-gray-100 text-gray-700 font-saira leading-relaxed antialiased">
 			<Header />
 			<main className="py-8">{children}</main>
 			<footer>
