@@ -1,6 +1,7 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false,
+	presets: [require('./portoby-preset')],
   theme: {
     extend: {},
   },
