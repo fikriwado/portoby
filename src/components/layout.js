@@ -7,11 +7,11 @@ import { faLinkedin, faInstagram, faGithub } from '@fortawesome/free-brands-svg-
 const Layout = ({ children }) => {
 	return (
 		<div className="font-saira min-h-screen bg-gray-100 text-cool-gray-700 font-saira leading-relaxed antialiased">
-			<Header />
-			<main className="py-6">{children}</main>
-			<footer className="py-10">
-				<div className="container text-center">
-					<div className="w-full lg:w-7/12 mx-auto lg:px-8">
+			<div className="w-full md:w-10/12 xl:w-7/12 mx-auto lg:px-8">
+				<Header />
+				<main className="md:py-6">{children}</main>
+				<footer className="py-10">
+					<div className="container text-center">
 						<p className="mb-0.5">© 2021 Fikri Wado</p>
 						<p className="mb-1.5">Made with Love in Tasikmalaya, Indonesia</p>
 						<div className="flex items-center justify-center">
@@ -26,8 +26,8 @@ const Layout = ({ children }) => {
 							</a>
 						</div>
 					</div>
-				</div>
-			</footer>
+				</footer>
+			</div>
 		</div>
 	)
 }
