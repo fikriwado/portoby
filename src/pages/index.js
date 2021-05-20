@@ -7,7 +7,7 @@ const IndexPage = () => (
 	<Layout>
 		<Seo title="Home" />
 		<div className="container">
-			<div className="prose md:text-lg max-w-none">
+			<div className="w-full prose text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8">
 				<p>
 					<span>Hi, I am a front-end developer from Indonesia with about 5 years experience. I can work with a pure basic front-end and even frameworks like</span>
 					<span className="text-pink-500 italic font-medium"> bootstrap</span>,
