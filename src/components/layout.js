@@ -6,7 +6,7 @@ import { faLinkedin, faInstagram, faGithub } from '@fortawesome/free-brands-svg-
 
 const Layout = ({ children }) => {
 	return (
-		<div className="font-saira min-h-screen bg-gray-100 text-cool-gray-700 font-saira leading-relaxed antialiased">
+		<div className="font-saira min-h-screen bg-gray-100 text-cool-gray-700 leading-relaxed antialiased dark:bg-gray-900 dark:text-gray-300">
 			<Header />
 			<main className="py-6">{children}</main>
 			<footer className="py-10">

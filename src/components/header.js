@@ -1,10 +1,11 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Header = () => {
+    const [isDark, setIsDark] = useState(false)
 	const data = useStaticQuery(graphql`
 		query SiteHeaderQuery {
 			site {
@@ -17,6 +18,40 @@ const Header = () => {
 	`)
 
 	const { title, specialist } = data.site.siteMetadata
+
+	const toggleTheme = (value) => {
+		setIsDark(value)
+		const html = document.querySelector('html')
+
+		let mode = ''
+		if (value === true) {
+			if (html.getAttribute('class') !== 'dark') {
+				mode = 'dark'
+			}else{
+				mode = 'light'
+				setIsDark(!value)
+			}
+		}else {
+			mode = 'light'
+		}
+		
+		localStorage.setItem('fixwadTheme', mode)
+		html.classList.add(localStorage.getItem('fixwadTheme'))
+		if(mode === 'dark') {
+			html.classList.remove('light')
+		}else {
+			html.classList.remove('dark')
+		}
+	}
+
+	useEffect(() => {
+		if (localStorage.fixwadTheme === 'dark' || (!('fixwadTheme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.querySelector('html').classList.add('dark')
+		} else {
+			document.querySelector('html').classList.remove('dark')
+		}
+		localStorage.removeItem('fixwadTheme')
+	}, [])
 
 	return (
 		<header className="sm:py-5">
@@ -34,11 +69,11 @@ const Header = () => {
 							/>
 							<div className="felx font-fira-code">
 								<h1 className="text-2xl font-bold mb-1"><Link to="/">{title}</Link></h1>
-								<p className="ml-0.5 text-gray-500">{specialist}</p>
+								<p className="ml-0.5 text-gray-500 dark:text-gray-400">{specialist}</p>
 							</div>
 						</div>
 						<div className="w-full sm:w-auto flex sm:flex-col lg:flex-row items-center justify-end order-1 sm:order-2 bg-gray-200 py-1 px-4 mb-4 rounded-full sm:bg-transparent sm:p-0 sm:mb-0 sm:rounded-none">
-							<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => toggleTheme(!isDark)}>
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
 							</svg>
 							

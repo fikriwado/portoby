@@ -7,7 +7,7 @@ const IndexPage = () => (
 	<Layout>
 		<Seo title="Home" />
 		<div className="container">
-			<div className="w-full prose text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8">
+			<div className="w-full prose text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300">
 				<p>
 					<span>Hi, I am a front-end developer from Indonesia with about 5 years experience. I can work with a pure basic front-end and even frameworks like</span>
 					<span className="text-pink-500 italic font-medium"> bootstrap</span>,
@@ -19,7 +19,7 @@ const IndexPage = () => (
 				</p>
 				<p>My official site is at <a href="https://fikriwado.com" className="text-pink-500 font-medium">https://fikriwado.com</a>.</p>
 				<p>For this website I named portoby, <a href="https://github.com/fikriwado/portoby" className="text-pink-500 font-medium">check the repository</a>. You can use this freely, it uses Tailwindcss and Gatsbyjs technology. You only need to fork then change the profile, then you can deploy on netlify easily.</p>
-				<Link to="/" className="block border-2 border-cool-gray-600 text-cool-gray-600 hover:bg-cool-gray-600 hover:text-white duration-300 py-2 px-4 no-underline mt-8 text-center">Selected Works</Link>
+				<Link to="/" className="block border-2 border-cool-gray-600 text-cool-gray-600 hover:bg-cool-gray-600 hover:text-white duration-300 py-2 px-4 no-underline mt-8 text-center dark:border-cool-gray-400 dark:hover:bg-cool-gray-400 dark:text-cool-gray-400 dark:hover:text-white">Selected Works</Link>
 			</div>
 		</div>
 	</Layout>
