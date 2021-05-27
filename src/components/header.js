@@ -72,7 +72,7 @@ const Header = () => {
 								<p className="ml-0.5 text-gray-500 dark:text-gray-400">{specialist}</p>
 							</div>
 						</div>
-						<div className="w-full sm:w-auto flex sm:flex-col lg:flex-row items-center justify-end order-1 sm:order-2 bg-gray-200 dark:bg-gray-800 py-1 px-4 mb-4 rounded-full sm:bg-transparent sm:p-0 sm:mb-0 sm:rounded-none">
+						<div className="w-full sm:w-auto flex sm:flex-col lg:flex-row items-center justify-end order-1 sm:order-2 bg-gray-200 dark:bg-gray-800 py-1 px-4 mb-4 rounded-full sm:bg-transparent sm:dark:bg-transparent sm:p-0 sm:mb-0 sm:rounded-none">
 							<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => toggleTheme(!isDark)}>
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
 							</svg>
