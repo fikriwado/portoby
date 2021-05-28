@@ -61,14 +61,16 @@ const Header = () => {
 				<div className="w-full lg:w-10/12 xl:w-7/12 mx-auto lg:px-8">
 					<div className="flex flex-wrap items-center justify-between border-b-2 border-gray-300 py-7">
 						<div className="w-full sm:w-auto flex flex-wrap items-center order-2 sm:order-1">
-							<StaticImage
-								src="../images/profile.png"
-								width={95}
-								quality={95}
-								formats={["AUTO", "WEBP", "AVIF"]}
-								className="rounded-full mr-4 sm:mr-6 w-16 h-16 sm:w-auto sm:h-auto"
-								alt="profile"
-							/>
+							<Link to="/">
+								<StaticImage
+									src="../images/profile.png"
+									width={95}
+									quality={95}
+									formats={["AUTO", "WEBP", "AVIF"]}
+									className="rounded-full mr-4 sm:mr-6 w-16 h-16 sm:w-auto sm:h-auto"
+									alt="profile"
+								/>
+							</Link>
 							<div className="felx font-fira-code">
 								<h1 className="text-2xl font-bold mb-1"><Link to="/">{title}</Link></h1>
 								<p className="ml-0.5 text-gray-500 dark:text-gray-400">{specialist}</p>
@@ -117,9 +119,9 @@ const Menu = ({isOpen, setIsOpen}) => {
 			</div>
 			
 			<nav className="flex flex-col">
-				<Link to="/" className={classMenus}>About</Link>
-				<Link to="/" className={classMenus}>Works</Link>
-				<Link to="/" className={classMenus}>Blog</Link>
+				<Link to="/about" className={classMenus}>About</Link>
+				<Link to="/works" className={classMenus}>Works</Link>
+				<Link to="/blog" className={classMenus}>Blog</Link>
 				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className={classMenus} target="_blank" rel="noreferrer">Youtube</a>
 				<a href="mailto:fixwad.online@gmail.com" className={classMenus}>Contact</a>
 			</nav>

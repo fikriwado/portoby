@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `fira code\:400,600`,
+          `fira code\:400,600,700`,
           `saira\:400,500,600`,
         ],
         display: 'swap'
