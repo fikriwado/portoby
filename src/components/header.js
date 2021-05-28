@@ -6,6 +6,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Header = () => {
     const [isDark, setIsDark] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+
 	const data = useStaticQuery(graphql`
 		query SiteHeaderQuery {
 			site {
@@ -77,11 +79,14 @@ const Header = () => {
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
 							</svg>
 							
-							<svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 ml-3 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => setIsOpen(!isOpen)}>
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
 							</svg>
 						</div>
 					</div>
+
+					{isOpen ? <Menu isOpen={isOpen} setIsOpen={setIsOpen}/> : null}
+
 				</div>
 			</div>
 		</header>
@@ -97,3 +102,25 @@ Header.defaultProps = {
 }
 
 export default Header
+
+const Menu = ({isOpen, setIsOpen}) => {
+	return (
+		<div id="menus" className="flex flex-col justify-center fixed inset-0 bg-gray-800 text-center">
+			<div className="w-6 h-6 absolute top-5 right-4">
+				<button className="focus:outline-none text-white" onClick={() => setIsOpen(!isOpen)}>
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+			</div>
+			
+			<nav className="flex flex-col">
+				<Link to="/" className="block px-3.5 py-3 duration-100 text-white hover:text-gray-300">About</Link>
+				<Link to="/" className="block px-3.5 py-3 duration-100 text-white hover:text-gray-300">Works</Link>
+				<Link to="/" className="block px-3.5 py-3 duration-100 text-white hover:text-gray-300">Blog</Link>
+				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className="block px-3.5 py-3 duration-100 text-white hover:text-gray-300" target="_blank" rel="noreferrer">Youtube</a>
+				<a href="mailto:fixwad.online@gmail.com" className="block px-3.5 py-3 duration-100 text-white hover:text-gray-300">Contact</a>
+			</nav>
+		</div>
+	)
+}

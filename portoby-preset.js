@@ -7,7 +7,6 @@ module.exports = {
 				'2xl': '1360px',
 			},
 			colors: {
-				'fixwad-yellow': '#ffc857',
 				'cool-gray': colors.coolGray
 			},
 			container: {
