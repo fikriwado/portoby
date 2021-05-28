@@ -115,11 +115,11 @@ const Menu = ({isOpen, setIsOpen}) => {
 			</div>
 			
 			<nav className="flex flex-col">
-				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-xl hover:text-gray-400">About</Link>
-				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-xl hover:text-gray-400">Works</Link>
-				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-xl hover:text-gray-400">Blog</Link>
-				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className="block mx-3.5 my-3 duration-100 text-white text-xl hover:text-gray-400" target="_blank" rel="noreferrer">Youtube</a>
-				<a href="mailto:fixwad.online@gmail.com" className="block mx-3.5 my-3 duration-100 text-white text-xl hover:text-gray-400">Contact</a>
+				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">About</Link>
+				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">Works</Link>
+				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">Blog</Link>
+				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400" target="_blank" rel="noreferrer">Youtube</a>
+				<a href="mailto:fixwad.online@gmail.com" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">Contact</a>
 			</nav>
 		</div>
 	)
