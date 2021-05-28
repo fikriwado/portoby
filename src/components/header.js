@@ -104,6 +104,8 @@ Header.defaultProps = {
 export default Header
 
 const Menu = ({isOpen, setIsOpen}) => {
+	const classMenus = 'block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400'
+	
 	return (
 		<div id="menus" className="flex flex-col justify-center fixed inset-0 bg-gray-800 text-center">
 			<div className="w-6 h-6 absolute top-5 right-4">
@@ -115,11 +117,11 @@ const Menu = ({isOpen, setIsOpen}) => {
 			</div>
 			
 			<nav className="flex flex-col">
-				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">About</Link>
-				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">Works</Link>
-				<Link to="/" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">Blog</Link>
-				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400" target="_blank" rel="noreferrer">Youtube</a>
-				<a href="mailto:fixwad.online@gmail.com" className="block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400">Contact</a>
+				<Link to="/" className={classMenus}>About</Link>
+				<Link to="/" className={classMenus}>Works</Link>
+				<Link to="/" className={classMenus}>Blog</Link>
+				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className={classMenus} target="_blank" rel="noreferrer">Youtube</a>
+				<a href="mailto:fixwad.online@gmail.com" className={classMenus}>Contact</a>
 			</nav>
 		</div>
 	)
