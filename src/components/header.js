@@ -14,12 +14,14 @@ const Header = () => {
 				siteMetadata {
 					title
 					specialist
+					email
+					youtube
 				}
 			}
 		}
 	`)
 
-	const { title, specialist } = data.site.siteMetadata
+	const { title, specialist, email, youtube } = data.site.siteMetadata
 
 	const toggleTheme = (value) => {
 		setIsDark(value)
@@ -87,7 +89,7 @@ const Header = () => {
 						</div>
 					</div>
 
-					{isOpen ? <Menu isOpen={isOpen} setIsOpen={setIsOpen}/> : null}
+					{isOpen ? <Menu isOpen={isOpen} setIsOpen={setIsOpen} email={email} youtube={youtube}/> : null}
 
 				</div>
 			</div>
@@ -105,7 +107,7 @@ Header.defaultProps = {
 
 export default Header
 
-const Menu = ({isOpen, setIsOpen}) => {
+const Menu = ({isOpen, setIsOpen, email, youtube}) => {
 	const classMenus = 'block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400'
 	
 	return (
@@ -122,8 +124,8 @@ const Menu = ({isOpen, setIsOpen}) => {
 				<Link to="/about" className={classMenus}>About</Link>
 				<Link to="/works" className={classMenus}>Works</Link>
 				<Link to="/blog" className={classMenus}>Blog</Link>
-				<a href="https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A" className={classMenus} target="_blank" rel="noreferrer">Youtube</a>
-				<a href="mailto:fixwad.online@gmail.com" className={classMenus}>Contact</a>
+				<a href={youtube} className={classMenus} target="_blank" rel="noreferrer">Youtube</a>
+				<a href={`mailto:${email}`} className={classMenus}>Contact</a>
 			</nav>
 		</div>
 	)

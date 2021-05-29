@@ -5,7 +5,9 @@ module.exports = {
     description: `Hi, with about 5 years total experience in front end development, you can enjoy hiring me to solve your problem. I can help you, please invite me to start discussing your problem.`,
     keywords: `freelancer, front-end developer, expert front-end developer freelancer, tutorial front-end developer, influencer front-end developer`,
     author: `@fikriwado`,
-    siteURL: `https://portoby.fikriwado.com`
+    siteURL: `https://portoby.fikriwado.com`,
+    email: `fixwad.online@gmail.com`,
+    youtube: `https://www.youtube.com/channel/UClUuJy0uRe7IMr_EM_lu4-A`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -57,6 +59,7 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     'gatsby-plugin-postcss',
+    `gatsby-plugin-mailgo`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
