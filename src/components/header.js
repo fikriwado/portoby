@@ -61,9 +61,9 @@ const Header = () => {
 		<header className="sm:py-5">
 			<div className="container">
 				<div className="w-full lg:w-10/12 xl:w-7/12 mx-auto lg:px-8">
-					<div className="flex flex-wrap items-center justify-between border-b-2 border-gray-300 py-7">
+					<div className="flex flex-wrap items-center justify-between border-b-2 border-gray-300 pt-7 pb-6">
 						<div className="w-full sm:w-auto flex flex-wrap items-center order-2 sm:order-1">
-							<Link to="/">
+							<Link to="/" className="mt-2">
 								<StaticImage
 									src="../images/profile.png"
 									width={95}

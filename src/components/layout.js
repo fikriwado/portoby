@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
 	return (
 		<div className="font-saira min-h-screen bg-gray-100 text-cool-gray-700 leading-relaxed antialiased dark:bg-cool-gray-900 dark:text-cool-gray-300">
 			<Header />
-			<main className="py-6">{children}</main>
+			<main className="py-4 lg:py-6">{children}</main>
 			<footer className="py-10">
 				<div className="container text-center">
 					<div className="w-full lg:w-10/12 xl:w-7/12 mx-auto lg:px-8">
