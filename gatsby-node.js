@@ -1,7 +1,26 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const _ = require(`lodash`)
+const path = require(`path`)
+const { paginate } = require(`gatsby-awesome-pagination`)
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const { data } = await graphql(`
+        query CreatePageQuery {
+            allMarkdownRemark(filter: {fileAbsolutePath: {glob: "**/posts/**"}}) {
+                nodes {
+                    frontmatter {
+                        slug
+                    }
+                }
+            }
+        }
+    `)
+
+    paginate({
+        createPage,
+        items: data.allMarkdownRemark.nodes,
+        itemsPerPage: 5,
+        pathPrefix: '/blog',
+        component: path.resolve('./src/templates/posts.js')
+    })
+}

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogPage = () => (
+const BlogTestPage = () => (
 	<Layout>
 		<Seo title="About" />
 		<div className="container">
@@ -30,4 +30,4 @@ const BlogPage = () => (
 	</Layout>
 )
 
-export default BlogPage
+export default BlogTestPage
