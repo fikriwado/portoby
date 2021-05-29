@@ -109,7 +109,7 @@ const Menu = ({isOpen, setIsOpen}) => {
 	const classMenus = 'block mx-3.5 my-3 duration-100 text-white text-lg lg:text-xl hover:text-gray-400'
 	
 	return (
-		<div id="menus" className="flex flex-col justify-center fixed inset-0 bg-gray-800 text-center">
+		<div className="flex flex-col justify-center fixed inset-0 bg-gray-800 text-center z-50">
 			<div className="w-6 h-6 absolute top-5 right-4">
 				<button className="focus:outline-none text-white" onClick={() => setIsOpen(!isOpen)}>
 					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
