@@ -23,6 +23,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            tags: allMarkdownRemark(filter: {fileAbsolutePath: {glob: "**/posts/**"}}) {
+                group(field: frontmatter___tags) {
+                    fieldValue
+                    nodes {
+                        frontmatter {
+                            slug
+                        }
+                    }
+                }
+            }
         }
     `)
 
@@ -50,6 +60,17 @@ exports.createPages = async ({ graphql, actions }) => {
             pathPrefix: `/category/${_.kebabCase(category.fieldValue)}`,
             component: path.resolve('./src/templates/category.js'),
             context: {category: category.fieldValue}
+        })
+    })
+    
+    data.tags.group.forEach(tag => {
+        paginate({
+            createPage,
+            items: tag.nodes,
+            itemsPerPage: 3,
+            pathPrefix: `/tag/${_.kebabCase(tag.fieldValue)}`,
+            component: path.resolve('./src/templates/tag.js'),
+            context: {tag: tag.fieldValue}
         })
     })
 }

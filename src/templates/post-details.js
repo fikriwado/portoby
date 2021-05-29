@@ -12,8 +12,8 @@ const BlogDetails = ({data}) => {
 		<Layout>
 			<Seo title={title} description={description} />
 			<div className="container">
-				<div className="prose w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
-					<Link to="/blog" className="flex flex-wrap items-center block px-8 mb-10 no-underline">
+				<div className="prose w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 text-cool-gray-600 dark:text-gray-300">
+					<Link to="/blog" className="flex flex-wrap items-center block px-4 mb-10 no-underline text-cool-gray-600 dark:text-gray-300">
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
 						</svg>
@@ -40,7 +40,7 @@ const BlogDetails = ({data}) => {
 
 					<div>
 						{tags.map((tag, index) => (
-							<Link to={`/tags/${tag}`} className="mr-2" key={index}>{`#${tag}`}</Link>
+							<Link to={`/tag/${_.kebabCase(tag)}`} className="mr-2" key={index}>{`#${_.kebabCase(tag)}`}</Link>
 						))}
 					</div>
 				</div>
