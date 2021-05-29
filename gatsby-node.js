@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
     const { data } = await graphql(`
         query CreatePageQuery {
-            allMarkdownRemark(filter: {fileAbsolutePath: {glob: "**/posts/**"}}) {
+            posts: allMarkdownRemark(filter: {fileAbsolutePath: {glob: "**/posts/**"}}) {
                 nodes {
                     frontmatter {
                         slug
@@ -18,13 +18,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
     paginate({
         createPage,
-        items: data.allMarkdownRemark.nodes,
+        items: data.posts.nodes,
         itemsPerPage: 3,
         pathPrefix: '/blog',
         component: path.resolve('./src/templates/posts.js')
     })
 
-    data.allMarkdownRemark.nodes.forEach(post => {
+    data.posts.nodes.forEach(post => {
         createPage({
             path: '/blog/' + post.frontmatter.slug,
             component: path.resolve('./src/templates/post-details.js'),

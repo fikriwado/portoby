@@ -3,7 +3,7 @@ title: "Second Dummy Article"
 description: "This is an example of the second dummy article that you will fill in with your writing. Below is an example of how to use an image."
 date: "2021-05-29"
 slug: second-dummy-article
-category: "category1"
+category: "category2"
 tags: ["tag1", "tag2"]
 ---
 
