@@ -11,11 +11,6 @@ const CategoryPage = ({data, pageContext}) => {
             <Seo title={category.charAt(0).toUpperCase() + category.slice(1)} />
             <div className="container">
                 <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
-                    <div className="text-center font-fira-code mb-10">
-                        <h1 className="text-4xl font-bold mb-1.5">My Writing</h1>
-                        <p>In Indonesian Language</p>
-                    </div>
-
                     <div className="divide-y divide-gray-200 divide-solid mb-8">
                         <h1 className="inline-block border-b-2 pb-1 border-fixwad-yellow mt-2 text-lg font-bold">
                             Category: <span className="font-medium italic capitalize">{category}</span>

@@ -9,17 +9,12 @@ const BlogPage = ({data, pageContext}) => (
         <Seo title="Blog" />
         <div className="container">
             <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
-                <div className="text-center mb-4">
-                    <h1 className="text-3xl font-fira-code font-bold mb-0.5">My Writing</h1>
-                    <p>In Indonesian Language</p>
-                </div>
-
                 {data.allMarkdownRemark.nodes.map((blog) => (
                     <div className="py-6" key={blog.id}>
                         <Link to={`/blog/${blog.frontmatter.slug}`}>
-                            <h3 className="text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
+                            <h3 className="text-xl lg:text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
                         </Link>
-                        <p className="mb-2">{blog.frontmatter.description}</p>
+                        <p className="mb-2 text-sm lg:text-base">{blog.frontmatter.description}</p>
                         <div className="flex flex-wrap justify-between">
                             <div className="flex items-center text-sm lg:text-base">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
