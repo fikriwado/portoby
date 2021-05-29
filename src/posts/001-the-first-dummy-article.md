@@ -4,7 +4,7 @@ description: "This is an example of the first dummy article that you will fill i
 date: "2021-05-28"
 slug: the-first-dummy-article
 category: "category1"
-tags: ["tag1", "tag2"]
+tags: ["tag1", "tag3"]
 ---
 
 This is an example of the first dummy article that you will fill in with your writing. Below is an example of how to use an image.
