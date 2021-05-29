@@ -18,10 +18,10 @@ const TagPage = ({data, pageContext}) => {
                         {data.allMarkdownRemark.edges.map((blog) => (
                             <div key={blog.node.id}>
                                 <div className="py-6">
-                                    <Link to={`/post/${blog.node.frontmatter.slug}`}>
-                                        <h2 className="text-2xl font-semibold mb-4">{blog.node.frontmatter.title}</h2>
-                                    </Link>
-                                    <p className="mb-2">{blog.node.frontmatter.description}</p>
+                                <Link to={`/blog/${blog.frontmatter.slug}`}>
+                                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
+                                </Link>
+                                <p className="mb-2 text-sm md:text-base">{blog.frontmatter.description}</p>
                                     <div className="flex flex-wrap justify-between">
                                         <div className="flex items-center text-sm lg:text-base">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,17 +45,12 @@ const TagPage = ({data, pageContext}) => {
                         ))}
                     </div>
                     
-                    {pageContext.numberOfPages > 1 ?
-                        <div className="flex flex-wrap justify-between">
-                            {pageContext.previousPagePath
-                            ? <Link to={pageContext.previousPagePath} className="py-1.5 px-5 border border-gray-300 font-medium hover:bg-gray-300 duration-100">Previous</Link>
-                            : <span className="py-1.5 px-5 border border-gray-300 font-medium opacity-60 cursor-default">Previous</span>}
-
-                            {pageContext.nextPagePath
-                            ? <Link to={pageContext.nextPagePath} className="py-1.5 px-5 border border-gray-300 font-medium hover:bg-gray-300 duration-100">Next</Link>
-                            : <span className="py-1.5 px-5 border border-gray-300 font-medium opacity-60 cursor-default">Next</span>}
-                        </div>
-                    : null}
+                    {pageContext.numberOfPages > 1 ? 
+                    <div className="flex flex-wrap justify-between text-sm lg:text-base">
+                        {pageContext.previousPagePath ? <Link to={pageContext.previousPagePath} className="py-1.5 px-5 border border-cool-gray-300 font-medium hover:bg-cool-gray-300 dark:hover:bg-cool-gray-400 dark:hover:text-white duration-100">Previous</Link> : <span className="py-1.5 px-5 border border-cool-gray-300 font-medium opacity-60 cursor-default">Previous</span>}
+                        {pageContext.nextPagePath ? <Link to={pageContext.nextPagePath} className="py-1.5 px-5 border border-cool-gray-300 font-medium hover:bg-cool-gray-300 dark:hover:bg-cool-gray-400 dark:hover:text-white duration-100">Next</Link> : <span className="py-1.5 px-5 border border-cool-gray-300 font-medium opacity-60 cursor-default">Next</span>}
+                    </div>
+                : null}
                 </div>
             </div>
         </Layout>

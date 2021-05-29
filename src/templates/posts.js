@@ -12,11 +12,11 @@ const BlogPage = ({data, pageContext}) => (
                 {data.allMarkdownRemark.nodes.map((blog) => (
                     <div className="py-6" key={blog.id}>
                         <Link to={`/blog/${blog.frontmatter.slug}`}>
-                            <h3 className="text-xl lg:text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
+                            <h3 className="text-xl md:text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
                         </Link>
-                        <p className="mb-2 text-sm lg:text-base">{blog.frontmatter.description}</p>
+                        <p className="mb-2 text-sm md:text-base">{blog.frontmatter.description}</p>
                         <div className="flex flex-wrap justify-between">
-                            <div className="flex items-center text-sm lg:text-base">
+                            <div className="flex items-center text-sm md:text-base">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
@@ -37,7 +37,7 @@ const BlogPage = ({data, pageContext}) => (
                 ))}
                 
                 {pageContext.numberOfPages > 1 ? 
-                    <div className="flex flex-wrap justify-between">
+                    <div className="flex flex-wrap justify-between text-sm lg:text-base">
                         {pageContext.previousPagePath ? <Link to={pageContext.previousPagePath} className="py-1.5 px-5 border border-cool-gray-300 font-medium hover:bg-cool-gray-300 dark:hover:bg-cool-gray-400 dark:hover:text-white duration-100">Previous</Link> : <span className="py-1.5 px-5 border border-cool-gray-300 font-medium opacity-60 cursor-default">Previous</span>}
                         {pageContext.nextPagePath ? <Link to={pageContext.nextPagePath} className="py-1.5 px-5 border border-cool-gray-300 font-medium hover:bg-cool-gray-300 dark:hover:bg-cool-gray-400 dark:hover:text-white duration-100">Next</Link> : <span className="py-1.5 px-5 border border-cool-gray-300 font-medium opacity-60 cursor-default">Next</span>}
                     </div>

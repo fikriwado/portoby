@@ -30,7 +30,7 @@ const BlogDetails = ({data}) => {
 							<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
 							</svg>
-							<Link to={`/category/${_.kebabCase(category)}`} className="no-underline capitalize">
+							<Link to={`/category/${_.kebabCase(category)}`} className="no-underline text-cool-gray-600 dark:text-gray-300 capitalize">
 								{category}
 							</Link>
 						</div>
@@ -40,7 +40,7 @@ const BlogDetails = ({data}) => {
 
 					<div>
 						{tags.map((tag, index) => (
-							<Link to={`/tag/${_.kebabCase(tag)}`} className="mr-2" key={index}>{`#${_.kebabCase(tag)}`}</Link>
+							<Link to={`/tag/${_.kebabCase(tag)}`} className="mr-2 text-cool-gray-600 dark:text-gray-300" key={index}>{`#${_.kebabCase(tag)}`}</Link>
 						))}
 					</div>
 				</div>
