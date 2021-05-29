@@ -18,10 +18,10 @@ const CategoryPage = ({data, pageContext}) => {
                         {data.allMarkdownRemark.edges.map((blog) => (
                             <div key={blog.node.id}>
                                 <div className="py-6">
-                                <Link to={`/blog/${blog.frontmatter.slug}`}>
-                                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
+                                <Link to={`/blog/${blog.node.frontmatter.slug}`}>
+                                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{blog.node.frontmatter.title}</h3>
                                 </Link>
-                                <p className="mb-2 text-sm md:text-base">{blog.frontmatter.description}</p>
+                                <p className="mb-2 text-sm md:text-base">{blog.node.frontmatter.description}</p>
                                     <div className="flex flex-wrap justify-between">
                                         <div className="flex items-center text-sm lg:text-base">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
