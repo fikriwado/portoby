@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
     paginate({
         createPage,
         items: data.allMarkdownRemark.nodes,
-        itemsPerPage: 5,
+        itemsPerPage: 3,
         pathPrefix: '/blog',
         component: path.resolve('./src/templates/posts.js')
     })
