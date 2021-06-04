@@ -11,7 +11,7 @@ const ProjectPage = ({data, pageContext}) => (
             <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
                 {data.allMarkdownRemark.nodes.map((project) => (
                     <div className="p-6 mb-10 border" key={project.id}>
-                        <Link to={`/projects/${project.frontmatter.slug}`}>
+                        <Link to={`/works/${project.frontmatter.slug}`}>
                             <GatsbyImage image={getImage(project.frontmatter.featuredImg)} alt={project.frontmatter.title} className="w-full" />
                             <h3 className="text-xl md:text-2xl font-semibold my-4">{project.frontmatter.title}</h3>
                         </Link>
