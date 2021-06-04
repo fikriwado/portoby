@@ -22,7 +22,7 @@ const ProjectDetails = ({data}) => {
 					</Link>
 					<div className="text-center font-fira-code mb-10">
 						<h1 className="text-2xl lg:text-4xl leading-snug font-bold mb-3 text-cool-gray-700 dark:text-gray-300">{title}</h1>
-						<div className="flex items-center justify-center text-sm lg:text-base">
+						<div className="flex items-center justify-center text-sm lg:text-base mb-4">
 							<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 							</svg>
