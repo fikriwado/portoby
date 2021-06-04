@@ -47,13 +47,13 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage,
         items: data.posts.nodes,
         itemsPerPage: 3,
-        pathPrefix: '/blog',
+        pathPrefix: '/blogs',
         component: path.resolve('./src/templates/posts.js')
     })
 
     data.posts.nodes.forEach(post => {
         createPage({
-            path: '/blog/' + post.frontmatter.slug,
+            path: '/blogs/' + post.frontmatter.slug,
             component: path.resolve('./src/templates/post-details.js'),
             context: {slug: post.frontmatter.slug}
         })
@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage,
             items: category.nodes,
             itemsPerPage: 3,
-            pathPrefix: `/category/${_.kebabCase(category.fieldValue)}`,
+            pathPrefix: `/categories/${_.kebabCase(category.fieldValue)}`,
             component: path.resolve('./src/templates/category.js'),
             context: {category: category.fieldValue}
         })
@@ -75,7 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage,
             items: tag.nodes,
             itemsPerPage: 3,
-            pathPrefix: `/tag/${_.kebabCase(tag.fieldValue)}`,
+            pathPrefix: `/tags/${_.kebabCase(tag.fieldValue)}`,
             component: path.resolve('./src/templates/tag.js'),
             context: {tag: tag.fieldValue}
         })

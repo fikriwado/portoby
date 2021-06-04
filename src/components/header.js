@@ -123,7 +123,7 @@ const Menu = ({isOpen, setIsOpen, email, youtube}) => {
 			<nav className="flex flex-col">
 				<Link to="/about" className={classMenus}>About</Link>
 				<Link to="/works" className={classMenus}>Works</Link>
-				<Link to="/blog" className={classMenus}>Blog</Link>
+				<Link to="/blogs" className={classMenus}>Blog</Link>
 				<a href={youtube} className={classMenus} target="_blank" rel="noreferrer">Youtube</a>
 				<a href={`mailto:${email}`} className={classMenus}>Contact</a>
 			</nav>

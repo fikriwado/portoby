@@ -13,7 +13,7 @@ const BlogDetails = ({data}) => {
 			<Seo title={title} description={description} />
 			<div className="container">
 				<div className="prose w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 text-cool-gray-600 dark:text-gray-300">
-					<Link to="/blog" className="flex flex-wrap items-center block lg:px-4 mb-10 no-underline text-cool-gray-600 dark:text-gray-300">
+					<Link to="/blogs" className="flex flex-wrap items-center block lg:px-4 mb-10 no-underline text-cool-gray-600 dark:text-gray-300">
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
 						</svg>
@@ -30,7 +30,7 @@ const BlogDetails = ({data}) => {
 							<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
 							</svg>
-							<Link to={`/category/${_.kebabCase(category)}`} className="no-underline text-cool-gray-600 dark:text-gray-300 capitalize">
+							<Link to={`/categories/${_.kebabCase(category)}`} className="no-underline text-cool-gray-600 dark:text-gray-300 capitalize">
 								{category}
 							</Link>
 						</div>
@@ -40,7 +40,7 @@ const BlogDetails = ({data}) => {
 
 					<div>
 						{tags.map((tag, index) => (
-							<Link to={`/tag/${_.kebabCase(tag)}`} className="mr-2 text-cool-gray-600 dark:text-gray-300" key={index}>{`#${_.kebabCase(tag)}`}</Link>
+							<Link to={`/tags/${_.kebabCase(tag)}`} className="mr-2 text-cool-gray-600 dark:text-gray-300" key={index}>{`#${_.kebabCase(tag)}`}</Link>
 						))}
 					</div>
 				</div>

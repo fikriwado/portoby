@@ -18,7 +18,7 @@ const CategoryPage = ({data, pageContext}) => {
                         {data.allMarkdownRemark.edges.map((blog) => (
                             <div key={blog.node.id}>
                                 <div className="py-6">
-                                <Link to={`/blog/${blog.node.frontmatter.slug}`}>
+                                <Link to={`/blogs/${blog.node.frontmatter.slug}`}>
                                     <h3 className="text-xl md:text-2xl font-semibold mb-4">{blog.node.frontmatter.title}</h3>
                                 </Link>
                                 <p className="mb-2 text-sm md:text-base">{blog.node.frontmatter.description}</p>
@@ -36,7 +36,7 @@ const CategoryPage = ({data, pageContext}) => {
                                                 {blog.node.frontmatter.category}
                                             </Link>
                                         </div>
-                                        <Link to={`/blog/${blog.node.frontmatter.slug}`}>
+                                        <Link to={`/blogs/${blog.node.frontmatter.slug}`}>
                                             <span className="font-medium text-right text-sm lg:text-base">Go Read</span>
                                         </Link>
                                     </div>

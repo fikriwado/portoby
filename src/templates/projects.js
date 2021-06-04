@@ -3,20 +3,19 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import _ from "lodash"
 
 const ProjectPage = ({data, pageContext}) => (
     <Layout>
         <Seo title="Project" />
         <div className="container">
             <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
-                {data.allMarkdownRemark.nodes.map((blog) => (
-                    <div className="p-6 mb-10 border" key={blog.id}>
-                        <Link to={`/blog/${blog.frontmatter.slug}`}>
-                            <GatsbyImage image={getImage(blog.frontmatter.featuredImg)} alt={blog.frontmatter.title} className="w-full" />
-                            <h3 className="text-xl md:text-2xl font-semibold my-4">{blog.frontmatter.title}</h3>
+                {data.allMarkdownRemark.nodes.map((project) => (
+                    <div className="p-6 mb-10 border" key={project.id}>
+                        <Link to={`/projects/${project.frontmatter.slug}`}>
+                            <GatsbyImage image={getImage(project.frontmatter.featuredImg)} alt={project.frontmatter.title} className="w-full" />
+                            <h3 className="text-xl md:text-2xl font-semibold my-4">{project.frontmatter.title}</h3>
                         </Link>
-                        <p className="mb-2 text-sm md:text-base">{blog.frontmatter.description}</p>
+                        <p className="mb-2 text-sm md:text-base">{project.frontmatter.description}</p>
                     </div>
                 ))}
                 

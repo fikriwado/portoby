@@ -11,7 +11,7 @@ const BlogPage = ({data, pageContext}) => (
             <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
                 {data.allMarkdownRemark.nodes.map((blog) => (
                     <div className="py-6" key={blog.id}>
-                        <Link to={`/blog/${blog.frontmatter.slug}`}>
+                        <Link to={`/blogs/${blog.frontmatter.slug}`}>
                             <h3 className="text-xl md:text-2xl font-semibold mb-4">{blog.frontmatter.title}</h3>
                         </Link>
                         <p className="mb-2 text-sm md:text-base">{blog.frontmatter.description}</p>
@@ -25,11 +25,11 @@ const BlogPage = ({data, pageContext}) => (
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                                 </svg>
-                                <Link to={`/category/${_.kebabCase(blog.frontmatter.category)}`} className="capitalize">
+                                <Link to={`/categories/${_.kebabCase(blog.frontmatter.category)}`} className="capitalize">
                                     {blog.frontmatter.category}
                                 </Link>
                             </div>
-                            <Link to={`/blog/${blog.frontmatter.slug}`}>
+                            <Link to={`/blogs/${blog.frontmatter.slug}`}>
                                 <span className="font-medium text-right text-sm lg:text-base">Go Read</span>
                             </Link>
                         </div>
