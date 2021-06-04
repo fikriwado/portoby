@@ -33,6 +33,13 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            projects: allMarkdownRemark(filter: {fileAbsolutePath: {glob: "**/projects/**"}}) {
+                nodes {
+                    frontmatter {
+                        slug
+                    }
+                }
+            }
         }
     `)
 
@@ -72,5 +79,13 @@ exports.createPages = async ({ graphql, actions }) => {
             component: path.resolve('./src/templates/tag.js'),
             context: {tag: tag.fieldValue}
         })
+    })
+
+    paginate({
+        createPage,
+        items: data.projects.nodes,
+        itemsPerPage: 3,
+        pathPrefix: '/works',
+        component: path.resolve('./src/templates/projects.js')
     })
 }
