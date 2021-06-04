@@ -6,7 +6,7 @@ import _ from "lodash"
 
 const BlogPage = ({data, pageContext}) => (
     <Layout>
-        <Seo title="Blog" />
+        <Seo title="Blog" description="Hi, this is my blog. Here it discusses programming such as problem solving which I did to technical tutorials. So have fun reading, okay!" />
         <div className="container">
             <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
                 {data.allMarkdownRemark.nodes.map((blog) => (

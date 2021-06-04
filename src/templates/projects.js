@@ -6,7 +6,10 @@ import Seo from "../components/seo"
 
 const ProjectPage = ({data, pageContext}) => (
     <Layout>
-        <Seo title="Project" />
+        <Seo
+            title="Project"
+            description="This is an example of my work with various technologies that can convince you to hire me"
+        />
         <div className="container">
             <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
                 {data.allMarkdownRemark.nodes.map((project) => (
