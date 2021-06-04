@@ -7,11 +7,11 @@ import Seo from "../components/seo"
 const ProjectDetails = ({data}) => {
 	const { html } = data.markdownRemark
 	const { title, liveUrl, date, description, featuredImg } = data.markdownRemark.frontmatter
-
+	const imageSeo = data.markdownRemark.frontmatter.featuredImg.childImageSharp.fluid.src
 
 	return (
 		<Layout>
-			<Seo title={title} description={description} />
+			<Seo title={title} image={imageSeo} description={description} />
 			<div className="container">
 				<div className="prose w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 text-cool-gray-600 dark:text-gray-300">
 					<Link to="/works" className="flex flex-wrap items-center block lg:px-4 mb-10 no-underline text-cool-gray-600 dark:text-gray-300">
@@ -66,6 +66,9 @@ export const query = graphql`
                             placeholder: DOMINANT_COLOR
                             formats: [AUTO, WEBP, AVIF]
                         )
+						fluid(maxWidth: 300) {
+							src
+						}
                     }
                 }
 			}
