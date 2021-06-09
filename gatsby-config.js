@@ -36,18 +36,16 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 700,
-              qualiy: 95,
-              linkImagesToOriginal: false,
-              withWebp: true,
-              withAvif: true
-            }
+        plugins: [{
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 700,
+            qualiy: 95,
+            linkImagesToOriginal: false,
+            withWebp: true,
+            withAvif: true
           }
-        ]
+        }]
       }
     },
     `gatsby-transformer-sharp`,
@@ -76,6 +74,17 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: [
+    //       "",
+    //     ],
+    //     pluginConfig: {
+    //       head: false,
+    //     },
+    //   },
+    // }
   ],
 }
