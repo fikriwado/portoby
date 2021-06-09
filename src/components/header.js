@@ -40,8 +40,8 @@ const Header = () => {
 		}
 		
 		var exDate = new Date();
-		// exDate.setDate(exDate.getDate() + 1);
-		localStorage.setItem('fixwadExDate', exDate.getTime() + 10000)
+		exDate.setDate(exDate.getDate() + 1);
+		localStorage.setItem('fixwadExDate', exDate.getTime())
 		localStorage.setItem('fixwadTheme', mode)
 		html.classList.add(localStorage.getItem('fixwadTheme'))
 		if(mode === 'dark') {
