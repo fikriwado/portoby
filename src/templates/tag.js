@@ -11,10 +11,10 @@ const TagPage = ({data, pageContext}) => {
             <Seo title={tag.charAt(0).toUpperCase() + tag.slice(1)} />
             <div className="container">
                 <div className="w-full text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300 text-cool-gray-600">
+                    <h1 className="inline-block border-b-2 pb-1 border-fixwad-yellow mt-2 text-lg font-bold">
+                        Tags: <span className="font-medium italic capitalize">{tag}</span>
+                    </h1>
                     <div className="divide-y divide-gray-200 divide-solid mb-8">
-                        <h1 className="inline-block border-b-2 pb-1 border-fixwad-yellow mt-2 text-lg font-bold">
-                            Tags: <span className="font-medium italic capitalize">{tag}</span>
-                        </h1>
                         {data.allMarkdownRemark.edges.map((blog) => (
                             <div key={blog.node.id}>
                                 <div className="py-6">

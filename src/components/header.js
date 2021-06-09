@@ -39,6 +39,9 @@ const Header = () => {
 			mode = 'light'
 		}
 		
+		var exDate = new Date();
+		// exDate.setDate(exDate.getDate() + 1);
+		localStorage.setItem('fixwadExDate', exDate.getTime() + 10000)
 		localStorage.setItem('fixwadTheme', mode)
 		html.classList.add(localStorage.getItem('fixwadTheme'))
 		if(mode === 'dark') {
@@ -48,13 +51,19 @@ const Header = () => {
 		}
 	}
 
+
 	useEffect(() => {
+		var dateNow = new Date();
+		if(localStorage.fixwadExDate <= dateNow.getTime()) {
+			localStorage.removeItem('fixwadExDate')
+			localStorage.removeItem('fixwadTheme')
+		}
+
 		if (localStorage.fixwadTheme === 'dark' || (!('fixwadTheme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 			document.querySelector('html').classList.add('dark')
 		} else {
 			document.querySelector('html').classList.remove('dark')
 		}
-		localStorage.removeItem('fixwadTheme')
 	}, [])
 
 	return (
