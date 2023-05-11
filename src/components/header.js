@@ -74,7 +74,7 @@ const Header = () => {
 						<div className="w-full sm:w-auto flex flex-wrap items-center order-2 sm:order-1">
 							<Link to="/" className="mt-2">
 								<StaticImage
-									src="../images/profile.png"
+									src="../images/profile_2023.png"
 									width={95}
 									quality={95}
 									formats={["AUTO", "WEBP", "AVIF"]}

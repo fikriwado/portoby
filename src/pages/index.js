@@ -9,7 +9,7 @@ const IndexPage = () => (
 		<div className="container">
 			<div className="w-full prose text-lg max-w-none lg:w-10/12 xl:w-7/12 mx-auto lg:px-8 dark:text-gray-300">
 				<p>
-					<span>Hi, I am a front-end developer from Indonesia for about 5 years experience. I can work with a pure basic front-end and even frameworks like</span>
+					<span>Hi, I have worked with JavaScript and its frameworks, React and Vue are my main tools most of my time. I am passionate about interface, system design and best practice. I can use </span>
 					<span className="text-pink-500 italic font-medium"> bootstrap</span>,
 					<span className="text-pink-500 italic font-medium"> tailwindcss</span>,
 					<span className="text-pink-500 italic font-medium"> vuejs</span>,
